@@ -1,28 +1,67 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It Works!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-     body, a {
-        background-color: #000;
-        color: #0f0;
-        font-family: monospace;
-        white-space: pre-wrap;
-     }
-    </style>
- </head>
- <body>
-    <div class="container">
-     <div class="row">
-        <div class="col-md-12">
-         <h1>Carlossolis.com</h1>
-            <p>Welcome to my future webpage</p>
-            <p><a href="https://www.linkedin.com/in/soycarlossolis/">Check out my Linkedin Profile.</a></p>
-        </div>
-     </div>
-    </div>
- </body>
- </html>
+<!DOCTYPE html>
+<html lang="en">
+<!-- Este sitio fue creado con un prompt, aprende a hacerlo tu también -->
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Carlos Solis | Aprende a dominar la IA, programación y agile</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style>
+      body {
+         background-color: #000;
+         color: #0f0;
+         font-family: monospace;
+         white-space: pre-wrap;
+      }
+
+      a {
+         color: #0f0;
+         text-decoration: none;
+      }
+
+      a:hover {
+         color: #0f0;
+         text-decoration: none;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h1>Carlos_Solis.com</h1>
+            <p>Hola, soy Carlos, un apasionado de la IA, la programación y las metodologías ágiles.</p>
+
+            <a class="d-flex" href='https://www.linkedin.com/in/soycarlossolis/' target="_blank">
+               <p class="d-inline" id="typed-text"></p><span id="cursor">█</span>
+            </a>
+         </div>
+      </div>
+   </div>
+   <script>
+      const text = "Visita mi perfil de Linkedin.";
+      const typedTextElement = document.getElementById('typed-text');
+      const cursorElement = document.getElementById('cursor');
+      let charIndex = 0;
+
+      function type() {
+         if (charIndex < text.length) {
+            typedTextElement.innerHTML += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 50);
+         } else {
+            cursorElement.style.display = 'inline';
+         }
+      }
+
+      function blinkCursor() {
+         cursorElement.style.display = (cursorElement.style.display === 'none' ? 'inline' : 'none');
+      }
+      type();
+      setInterval(blinkCursor, 500); 
+   </script>
+</body>
+
+</html>
